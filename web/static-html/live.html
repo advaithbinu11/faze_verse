@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Watch matches, predict rounds, earn points and party up with players who share your games.">
+  <title>Live match · FaZe Vault</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%23e4002b%27/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="fv-video-id" content="">
+</head>
+<body data-page="live">
+<input type="checkbox" id="theme" class="sr-only" aria-label="Switch colour theme">
+<div class="wrap">
+  <a href="#main" class="sr-only skip">Skip to content</a>
+  <header class="top">
+    <a href="index.html" class="logo">Faze <span class="accent">Vault</span></a>
+    <div class="top-actions" id="top-actions">
+      <span class="chip chip-off">Demo data</span>
+      <span class="chip chip-accent">1,200 Points</span>
+      <a href="login.html" class="btn">Sign out</a>
+      <label for="theme" class="btn" role="button" tabindex="0">Switch theme</label>
+    </div>
+  </header>
+  <nav aria-label="Main" class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="live.html" aria-current="page">Live</a></li>
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="party.html">Party up</a></li>
+      <li><a href="create.html">Create</a></li>
+      <li><a href="arcade.html">Arcade</a></li>
+      <li><a href="rewards.html">Rewards</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+  <main id="main" tabindex="-1">
+
+    <div class="live">
+      <section class="match-col" id="match-col" aria-label="Match">
+        <input type="radio" name="match" id="m1" checked aria-label="FaZe vs Team Nova">
+        <input type="radio" name="match" id="m2" aria-label="FaZe vs Northwind">
+        <input type="radio" name="match" id="m3" aria-label="FaZe vs Ironclad">
+        <div class="picker wrap-row" role="group" aria-label="Choose a match">
+          <label for="m1">FaZe vs Team Nova</label>
+          <label for="m2">FaZe vs Northwind</label>
+          <label for="m3">FaZe vs Ironclad</label>
+        </div>
+
+      <div class="match-panel" id="p1">
+        <div>
+          <div class="label">Live now · Counter-Strike 2</div>
+          <h1 class="h-xl">FaZe vs Team Nova</h1>
+          <p class="body-sm muted">Grand Final, Map 2</p>
+        </div>
+        <div class="pool" role="img" aria-label="Prediction pools: FaZe 11,200 points, Team Nova 7,200 points">
+          <div class="pool-bars" aria-hidden="true"><div class="bar bar-a" style="--h:64.3%"></div><div class="bar bar-b" style="--h:44.5%"></div></div>
+        </div>
+        <dl class="stats" aria-label="Pool breakdown">
+          <div><dt class="label">FaZe</dt><dd>11,200 pts · 1.64x</dd></div>
+          <div><dt class="label">Team Nova</dt><dd>7,200 pts · 2.56x</dd></div>
+          <div><dt class="label">Total pool</dt><dd>18,400 pts</dd></div>
+        </dl>
+        <div class="frame empty"><div class="label">Calls are closed</div><p class="body-sm muted">This match has started, so the pool is locked. Come back for the next one.</p></div>
+      </div>
+
+      <div class="match-panel" id="p2">
+        <div>
+          <div class="label">Starts in 26 hours · Counter-Strike 2</div>
+          <h1 class="h-xl">FaZe vs Northwind</h1>
+          <p class="body-sm muted">Semifinal</p>
+        </div>
+        <div class="pool" role="img" aria-label="Prediction pools: FaZe 2,600 points, Northwind 2,600 points">
+          <div class="pool-bars" aria-hidden="true"><div class="bar bar-a" style="--h:54.4%"></div><div class="bar bar-b" style="--h:54.4%"></div></div>
+        </div>
+        <dl class="stats" aria-label="Pool breakdown">
+          <div><dt class="label">FaZe</dt><dd>2,600 pts · 2.00x</dd></div>
+          <div><dt class="label">Northwind</dt><dd>2,600 pts · 2.00x</dd></div>
+          <div><dt class="label">Total pool</dt><dd>5,200 pts</dd></div>
+        </dl>
+        <form action="live.html" class="stack-sm panel-box" style="gap:12px">
+          <fieldset><legend>Who takes it?</legend><div class="wrap-row">
+            <label class="pill"><input type="radio" name="team-2" value="team_a" checked><span>FaZe</span></label>
+            <label class="pill"><input type="radio" name="team-2" value="team_b"><span>Northwind</span></label>
+          </div></fieldset>
+          <div class="field"><label for="stake-2">Points to stake (you have 1,200)</label>
+            <input id="stake-2" name="points" class="input w-200" inputmode="numeric" value="100"></div>
+          <div><button type="submit" class="btn btn-primary">Lock in</button></div>
+        </form>
+      </div>
+
+      <div class="match-panel" id="p3">
+        <div>
+          <div class="label">Starts in 3 days · Rocket League</div>
+          <h1 class="h-xl">FaZe vs Ironclad</h1>
+          <p class="body-sm muted">Group Stage, Day 3</p>
+        </div>
+        <div class="pool" role="img" aria-label="Prediction pools: FaZe 700 points, Ironclad 200 points">
+          <div class="pool-bars" aria-hidden="true"><div class="bar bar-a" style="--h:79.7%"></div><div class="bar bar-b" style="--h:29.0%"></div></div>
+        </div>
+        <dl class="stats" aria-label="Pool breakdown">
+          <div><dt class="label">FaZe</dt><dd>700 pts · 1.29x</dd></div>
+          <div><dt class="label">Ironclad</dt><dd>200 pts · 4.50x</dd></div>
+          <div><dt class="label">Total pool</dt><dd>900 pts</dd></div>
+        </dl>
+        <form action="live.html" class="stack-sm panel-box" style="gap:12px">
+          <fieldset><legend>Who takes it?</legend><div class="wrap-row">
+            <label class="pill"><input type="radio" name="team-3" value="team_a" checked><span>FaZe</span></label>
+            <label class="pill"><input type="radio" name="team-3" value="team_b"><span>Ironclad</span></label>
+          </div></fieldset>
+          <div class="field"><label for="stake-3">Points to stake (you have 1,200)</label>
+            <input id="stake-3" name="points" class="input w-200" inputmode="numeric" value="100"></div>
+          <div><button type="submit" class="btn btn-primary">Lock in</button></div>
+        </form>
+      </div>
+      </section>
+
+      <div class="stack" style="gap:32px;align-content:start">
+        <section aria-labelledby="watch-h" id="watch-box">
+          <h2 id="watch-h" class="h-lg">Watch to earn</h2>
+          <p class="body-sm muted mb-3">Play the featured video to the end for bonus points, once per video.</p>
+          <!-- Replace with: <iframe src="https://www.youtube.com/embed/VIDEO_ID" ...> once a video is registered for points. -->
+          <div class="frame empty"><div class="label">No video scheduled</div><p class="body-sm muted">A featured video appears here once one is registered for points.</p></div>
+        </section>
+        <section aria-labelledby="upd-h">
+          <h2 id="upd-h" class="h-lg">Match updates</h2>
+          <p class="body-sm muted mb-3">Round results as they land.</p>
+          <ul class="updates">
+            <li><b>R14</b>FaZe wins the round on a 3k clutch.</li>
+            <li><b>R13</b>Team Nova takes the B site.</li>
+            <li><b>R12</b>FaZe force-buys and wins.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="foot">Unofficial fan project in development. Points have no cash value. 13+ only; no private messages in parties.</footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

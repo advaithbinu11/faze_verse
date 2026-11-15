@@ -1,0 +1,2810 @@
+{
+ "total": 415,
+ "featured": [
+  {
+   "name": "Apex",
+   "roles": [
+    "Co-Owner",
+    "Clan Director",
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ],
+   "photo": "/team/apex.jpg",
+   "credit": null
+  },
+  {
+   "name": "Banks",
+   "roles": [
+    "CEO",
+    "Co-Owner",
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ],
+   "photo": "/team/banks.jpg",
+   "credit": null
+  },
+  {
+   "name": "Rain",
+   "roles": [
+    "Co-Owner",
+    "FaZe Sniping",
+    "Content Creator",
+    "Personality"
+   ],
+   "photo": "/team/rain.png",
+   "credit": {
+    "photographer": "Gamma Labs",
+    "title": "Nordan.png",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nordan.png",
+    "terms": "https://creativecommons.org/licenses/by/4.0/"
+   }
+  },
+  {
+   "name": "Temperrr",
+   "roles": [
+    "Co-Owner",
+    "Content Creator",
+    "FaZe Sniping"
+   ],
+   "photo": "/team/temperrr.jpg",
+   "credit": null
+  },
+  {
+   "name": "ZooMaa",
+   "roles": [
+    "Call of Duty Player"
+   ],
+   "photo": "/team/zoomaa.jpg",
+   "credit": null
+  },
+  {
+   "name": "broky",
+   "roles": [
+    "CS2 Player",
+    "AWPer"
+   ],
+   "photo": "/team/broky.jpg",
+   "credit": {
+    "photographer": "VaKarM.net",
+    "title": "Broky with Faze PGL Major Antwerp (05-2022) (cropped).jpg",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Broky_with_Faze_PGL_Major_Antwerp_(05-2022)_(cropped).jpg",
+    "terms": "https://creativecommons.org/licenses/by/2.0/"
+   }
+  },
+  {
+   "name": "karrigan",
+   "roles": [
+    "CS2 Player",
+    "In-Game Leader"
+   ],
+   "photo": "/team/karrigan.jpg",
+   "credit": {
+    "photographer": "VaKarM.net",
+    "title": "Karrigan with Faze PGL Major Antwerp (05-2022) (cropped).jpg",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Karrigan_with_Faze_PGL_Major_Antwerp_(05-2022)_(cropped).jpg",
+    "terms": "https://creativecommons.org/licenses/by/2.0/"
+   }
+  },
+  {
+   "name": "Twistzz",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ],
+   "photo": "/team/twistzz.jpg",
+   "credit": {
+    "photographer": "Esports Kingdom",
+    "title": "Twistzz IMG 1465 (47926460051) (cropped).jpg",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Twistzz_IMG_1465_(47926460051)_(cropped).jpg",
+    "terms": "https://creativecommons.org/licenses/by/2.0/"
+   }
+  },
+  {
+   "name": "frozen",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ],
+   "photo": "/team/frozen.png",
+   "credit": null
+  },
+  {
+   "name": "jcobbb",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ],
+   "photo": "/team/jcobbb.png",
+   "credit": null
+  }
+ ],
+ "members": [
+  {
+   "name": "ClipZ",
+   "roles": [
+    "Founder",
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "House Cat (Timid)",
+   "roles": [
+    "Founder",
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Resistance",
+   "roles": [
+    "Founder",
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Temperrr",
+   "roles": [
+    "Co-Owner",
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Apex",
+   "roles": [
+    "Co-Owner",
+    "Clan Director",
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Rain",
+   "roles": [
+    "Co-Owner",
+    "FaZe Sniping",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Banks",
+   "roles": [
+    "CEO",
+    "Co-Owner",
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "CBass",
+   "roles": [
+    "FaZe Clan Manager",
+    "Co-Leader",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Rug",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "CEO",
+    "Owner",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Adapt",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Blaze",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Teeqo",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Jev",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Fakie",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Bloo",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Replays",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Agony",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Personality",
+    "Video Editor",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Ajaiix",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "AJiX",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Aquas",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Artziiee",
+   "roles": [
+    "FaZe Sniping",
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Aviate",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Bazi",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Benji",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Bobo",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Carl",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Cdub",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Clrs",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Crafted",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Cuban",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "DatsArt",
+   "roles": [
+    "Graphic Designer",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Davey",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "DayV",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "DeeZeh",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "DEHIZ",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "DiB",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Dirty",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "DNag",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Drag",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Dyn",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Eskee",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Faytal",
+   "roles": [
+    "FaZe Sniping",
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Flew",
+   "roles": [
+    "Graphic Designer",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Force",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "GuTLess",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "GwidT",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Hateful",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Hazz",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Heist",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Hugz",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Iced",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "IPod",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Jambi",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Jazz",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "JCakes",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Jedi",
+   "roles": [
+    "Graphic Designer",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Jinx",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Joss",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Karma",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Kay",
+   "roles": [
+    "Content Creator",
+    "Personality",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Kayos",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Kitty",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Kraazy",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Kross",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Lads",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Linkzy",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Loams",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "LoWi",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Magic",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Mala",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "maMFz",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Mancat",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Marko",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Medii",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Meek",
+   "roles": [
+    "FaZe Sniping",
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Meercat",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Meerkat",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Mota",
+   "roles": [
+    "FaZe Sniping",
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Mozey",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Niqs",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Objay",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Orba",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "OutcsT",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Pamaj",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Perfect",
+   "roles": [
+    "FaZe Sniping",
+    "Editor"
+   ]
+  },
+  {
+   "name": "Pod",
+   "roles": [
+    "Graphic Designer",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Poko",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "PryZee",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Quality",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Qualityy",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Ramos",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Rebirthh",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "RioTzZ",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Robbie",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Rockst4r",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Ruler",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Scope",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Call of Duty",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "SG",
+   "roles": [
+    "Motivation",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "ShiFT",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Slasher",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Slp",
+   "roles": [
+    "FaZe Sniping",
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Spratt",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Stamina",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "StyL",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Sullys",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Swan",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Testy",
+   "roles": [
+    "Content Creator",
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Tetto",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Trick",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Twistt",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Velo",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Viz",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "WaRTeK",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "WillyG",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Zayzo",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Zeimzy",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "zejiM",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Zeyrion",
+   "roles": [
+    "FaZe Sniping"
+   ]
+  },
+  {
+   "name": "Zimer",
+   "roles": [
+    "FaZe Sniping",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Avery",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Barker",
+   "roles": [
+    "Montage Editor",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Booya",
+   "roles": [
+    "Warzone Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Cheo",
+   "roles": [
+    "Chef",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Cizzorz",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Cloakzy",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "DestinysJesus",
+   "roles": [
+    "Coach",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Faxuty",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Flea",
+   "roles": [
+    "Content Creator",
+    "Editor",
+    "Fortnite"
+   ]
+  },
+  {
+   "name": "H1ghSky1",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "JasonTheWeen",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "JzpR",
+   "roles": [
+    "Content Creator",
+    "Fitness"
+   ]
+  },
+  {
+   "name": "K1nG",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Fortnite"
+   ]
+  },
+  {
+   "name": "Kalei",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Kampy",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Kaysan",
+   "roles": [
+    "Musician",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Kaz",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Lacy",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Mew",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Milan",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Mongraal",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Nate",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Nate Hill",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator",
+    "Personality"
+   ]
+  },
+  {
+   "name": "NICKMERCS",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Owner"
+   ]
+  },
+  {
+   "name": "Nikan",
+   "roles": [
+    "Content Creator",
+    "Video Editor",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Nio",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "PlaqueBoyMax",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Proze",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Ronaldo",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Santana",
+   "roles": [
+    "Warzone Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Sensei",
+   "roles": [
+    "Content Creator",
+    "Fitness Entrepreneur",
+    "Personality"
+   ]
+  },
+  {
+   "name": "Sham",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Silky",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "Swagg",
+   "roles": [
+    "Warzone Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Tenser",
+   "roles": [
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Tfue",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "Thiefs",
+   "roles": [
+    "Fortnite Player",
+    "Content Creator"
+   ]
+  },
+  {
+   "name": "VIRUS",
+   "roles": [
+    "Content Creator",
+    "Streamer",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "YourRAGE",
+   "roles": [
+    "Content Creator",
+    "Streamer"
+   ]
+  },
+  {
+   "name": "04",
+   "roles": [
+    "Call of Duty Player",
+    "FaZe Vegas"
+   ]
+  },
+  {
+   "name": "72hrs",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "aBeZy",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "Abuzah",
+   "roles": [
+    "Call of Duty Player",
+    "FaZe Vegas"
+   ]
+  },
+  {
+   "name": "Aches",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "AdreN",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "Agge",
+   "roles": [
+    "FIFA Player"
+   ]
+  },
+  {
+   "name": "Aitzy",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "aizy",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "Ali",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Allegiance",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "allu",
+   "roles": [
+    "CS:GO Player",
+    "AWPer"
+   ]
+  },
+  {
+   "name": "Allushin",
+   "roles": [
+    "Rocket League Player"
+   ]
+  },
+  {
+   "name": "Alpaca",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Apathy",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Arcitys",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "arctic",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Asim",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Astro",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Attach",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "AYYJAYY",
+   "roles": [
+    "Rocket League Player"
+   ]
+  },
+  {
+   "name": "babybay",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "BabyJ",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Baldy",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Beer11",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Bini",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Bizzle",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "blu",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Bound",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "broky",
+   "roles": [
+    "CS2 Player",
+    "AWPer"
+   ]
+  },
+  {
+   "name": "Bubu Dubu",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "Bullet1",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "BulShark",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Bymas",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "cameram4n",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Carpe",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Cellium",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Censor",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Cented",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "clampOK",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Classic",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Clayster",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Coan",
+   "roles": [
+    "Graphics Designer"
+   ]
+  },
+  {
+   "name": "coldzera",
+   "roles": [
+    "CS:GO Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Commonly",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "corey",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "Cozzi",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "cromen",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "Crowder",
+   "roles": [
+    "Call of Duty Player",
+    "Coach"
+   ]
+  },
+  {
+   "name": "CSR",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Curexi",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Cyber",
+   "roles": [
+    "Rainbow Six Siege Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "D1gg3r1",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Dedo",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "di^v^",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "diceyzx",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Diggy",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Drazah",
+   "roles": [
+    "Call of Duty Player",
+    "FaZe Vegas"
+   ]
+  },
+  {
+   "name": "Dubs",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Echo",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "ELiGE",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Emory",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "Emy",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Enable",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "EpikWhale",
+   "roles": [
+    "Fortnite Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "evokje",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Ewok",
+   "roles": [
+    "Fortnite Content Creator"
+   ]
+  },
+  {
+   "name": "Faccento",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "falcated",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "FCTFCTN",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Fenya",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Ferox",
+   "roles": [
+    "Designer"
+   ]
+  },
+  {
+   "name": "Fewlass",
+   "roles": [
+    "FIFA Player"
+   ]
+  },
+  {
+   "name": "Fexx",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Firstkiller",
+   "roles": [
+    "Rocket League Player"
+   ]
+  },
+  {
+   "name": "Flanker",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "FleX",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Flyuh",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "FormaL",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Forsak3n",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "fox",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Frexs",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "fRoD",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Frosty",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "frozen",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Funk",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "fuzzface",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Fuzzface",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "gohaN",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "GoodFella",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Gorilla",
+   "roles": [
+    "FIFA Player"
+   ]
+  },
+  {
+   "name": "GoTaR",
+   "roles": [
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Grace",
+   "roles": [
+    "Personality"
+   ]
+  },
+  {
+   "name": "GRVTY",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "GuardiaN",
+   "roles": [
+    "CS:GO Player",
+    "AWPer"
+   ]
+  },
+  {
+   "name": "Gunless",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Gustav",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Gyro.",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Gyroscope",
+   "roles": [
+    "Rocket League Player"
+   ]
+  },
+  {
+   "name": "Handyy",
+   "roles": [
+    "Rainbow Six Siege Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Haxete",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "HaXxz",
+   "roles": [
+    "Apex Legends Player"
+   ]
+  },
+  {
+   "name": "HK Jr.",
+   "roles": [
+    "Fighting Game Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Hoppin",
+   "roles": [
+    "CS:GO Player",
+    "CS:GO Director",
+    "Personality"
+   ]
+  },
+  {
+   "name": "HSnamuringa",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "HugeGorilla",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "ImMadness",
+   "roles": [
+    "Apex Legends Player"
+   ]
+  },
+  {
+   "name": "ion",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Jaomock",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Jarvis",
+   "roles": [
+    "Fortnite Content Creator"
+   ]
+  },
+  {
+   "name": "Jas",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "jasonr",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "jcobbb",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Jeemzz",
+   "roles": [
+    "PUBG Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Jeffz",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Jembty",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "jkaem",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "JKap",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Joemeister",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Joey Fury",
+   "roles": [
+    "Fighting Game Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "JPEX",
+   "roles": [
+    "Graphics Artist"
+   ]
+  },
+  {
+   "name": "JSmooth",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "JubJub",
+   "roles": [
+    "EA Sports FC Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Jurd",
+   "roles": [
+    "Fortnite Player",
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "JurNii",
+   "roles": [
+    "Esports Player",
+    "Call of Duty",
+    "Substitute"
+   ]
+  },
+  {
+   "name": "Karma",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "karrigan",
+   "roles": [
+    "CS2 Player",
+    "In-Game Leader"
+   ]
+  },
+  {
+   "name": "KDS",
+   "roles": [
+    "Rainbow Six Siege Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Kickstart",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "kioShiMa",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "Kjaerbye",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "Korpaii",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "LarryBanks",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Lev",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "live",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Lucid",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "Lui",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "LycaN",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Maddiesuun",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Maikelele",
+   "roles": [
+    "CS:GO Player",
+    "AWPer"
+   ]
+  },
+  {
+   "name": "MajorManiak",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "Malls",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "Martoz",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Marved",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "mav",
+   "roles": [
+    "Rainbow Six Siege Player"
+   ]
+  },
+  {
+   "name": "Mboze",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Megga",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "MELA",
+   "roles": [
+    "PUBG Mobile Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Mendo",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Methodz",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "MeToR",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Michael04",
+   "roles": [
+    "EA Sports FC Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Mikwen",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "Mink",
+   "roles": [
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Mino7x",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "mist",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Mito",
+   "roles": [
+    "Creative Director"
+   ]
+  },
+  {
+   "name": "MORMAN",
+   "roles": [
+    "PUBG Mobile Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "MR5",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "mummAy",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Muringa",
+   "roles": [
+    "Rainbow Six Siege Player"
+   ]
+  },
+  {
+   "name": "mxey",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Naghz",
+   "roles": [
+    "Apex Legends Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Nameless",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "NEO",
+   "roles": [
+    "CS:GO Player"
+   ]
+  },
+  {
+   "name": "NiKo",
+   "roles": [
+    "CS:GO Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Ninja",
+   "roles": [
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "Nyx",
+   "roles": [
+    "Rainbow Six Siege Player"
+   ]
+  },
+  {
+   "name": "olofmeister",
+   "roles": [
+    "CS:GO Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Onzenxs",
+   "roles": [
+    "PUBG Mobile Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Pandxrz",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "panini",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Parasite",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Penguin",
+   "roles": [
+    "Halo Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Phantomz",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Philly",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Phony",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Poach",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Poised",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "Prestinni",
+   "roles": [
+    "Esports Player",
+    "Call of Duty",
+    "Substitute"
+   ]
+  },
+  {
+   "name": "Priestahh",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Proofy",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Prototype",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "PureR",
+   "roles": [
+    "Rainbow Six Siege Player"
+   ]
+  },
+  {
+   "name": "Q",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Racky",
+   "roles": [
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "rain (CS2 Player)",
+   "roles": [
+    "CS2 Player",
+    "Support"
+   ]
+  },
+  {
+   "name": "RAWKUS",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "Rawryy",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "refinnej",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Renegade",
+   "roles": [
+    "Halo Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Reyes",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "RollMan",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "ropz",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "Rossy",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Royal 2",
+   "roles": [
+    "Halo Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "s1mple",
+   "roles": [
+    "Esports Player",
+    "CS:GO",
+    "CS2",
+    "Loan"
+   ]
+  },
+  {
+   "name": "Saints",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Sassycassie",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "ShaDowBurn",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "ShoT_UP",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Sib",
+   "roles": [
+    "Esports Player",
+    "Call of Duty",
+    "Substitute"
+   ]
+  },
+  {
+   "name": "Simms",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Simp",
+   "roles": [
+    "Call of Duty Player",
+    "FaZe Vegas"
+   ]
+  },
+  {
+   "name": "Sinetic",
+   "roles": [
+    "Apex Legends Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Skrapz",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Slacked",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Slasher",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "SlurpeeG",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Smeef",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Snakebite",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "Snip3down",
+   "roles": [
+    "Apex Legends Player",
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "soulz1",
+   "roles": [
+    "Rainbow Six Siege Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "sOup77",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Spacelyon",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Sparg0",
+   "roles": [
+    "Super Smash Bros Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "SPREE",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Stellur",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "Studyy",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "StylishGaz",
+   "roles": [
+    "Video Editor"
+   ]
+  },
+  {
+   "name": "supameN",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Suppressed",
+   "roles": [
+    "Halo Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Sway",
+   "roles": [
+    "Fortnite Content Creator"
+   ]
+  },
+  {
+   "name": "Sypical",
+   "roles": [
+    "Rocket League Player"
+   ]
+  },
+  {
+   "name": "Tass",
+   "roles": [
+    "FIFA Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "TDKeane",
+   "roles": [
+    "EA Sports FC Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Tennp0",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "Theory",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "TiGG",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Tilt",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "TonyK",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Tripppey",
+   "roles": [
+    "Halo Infinite Player"
+   ]
+  },
+  {
+   "name": "Trippy",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "TwinDzn",
+   "roles": [
+    "Graphic Designer"
+   ]
+  },
+  {
+   "name": "Twistzz",
+   "roles": [
+    "CS2 Player",
+    "Rifler"
+   ]
+  },
+  {
+   "name": "TwoEasy",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "ubah",
+   "roles": [
+    "PUBG Player"
+   ]
+  },
+  {
+   "name": "Unchained",
+   "roles": [
+    "Montage Editor"
+   ]
+  },
+  {
+   "name": "Veineless",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Victory",
+   "roles": [
+    "Halo Player"
+   ]
+  },
+  {
+   "name": "Vintorez",
+   "roles": [
+    "PUBG Mobile Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "VITAKING",
+   "roles": [
+    "Rainbow Six Siege Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Vortex",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "VorwenN",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Wonderfuls",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "Xizt",
+   "roles": [
+    "CS:GO Player",
+    "IGL"
+   ]
+  },
+  {
+   "name": "Yelo",
+   "roles": [
+    "Fortnite Player"
+   ]
+  },
+  {
+   "name": "yoona",
+   "roles": [
+    "Professional Player"
+   ]
+  },
+  {
+   "name": "ZachaREEE",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "Zaibot",
+   "roles": [
+    "Head of FaZe Studio"
+   ]
+  },
+  {
+   "name": "Zaine",
+   "roles": [
+    "Apex Legends Player",
+    "Competitive"
+   ]
+  },
+  {
+   "name": "Zephyr",
+   "roles": [
+    "Esports Management"
+   ]
+  },
+  {
+   "name": "Zer0",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "Zeroo",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  },
+  {
+   "name": "Zombs",
+   "roles": [
+    "VALORANT Player"
+   ]
+  },
+  {
+   "name": "ZooMaa",
+   "roles": [
+    "Call of Duty Player"
+   ]
+  },
+  {
+   "name": "ZylewR",
+   "roles": [
+    "Esports Player",
+    "Call of Duty"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Watch matches, predict rounds, earn points and party up with players who share your games.">
+  <title>Create account · FaZe Vault</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%23e4002b%27/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="signup">
+<input type="checkbox" id="theme" class="sr-only" aria-label="Switch colour theme">
+<div class="wrap">
+  <a href="#main" class="sr-only skip">Skip to content</a>
+  <header class="top">
+    <a href="index.html" class="logo">Faze <span class="accent">Vault</span></a>
+    <div class="top-actions" id="top-actions">
+      <span class="chip chip-off">Demo data</span>
+      <span class="chip chip-accent">1,200 Points</span>
+      <a href="login.html" class="btn">Sign out</a>
+      <label for="theme" class="btn" role="button" tabindex="0">Switch theme</label>
+    </div>
+  </header>
+  <nav aria-label="Main" class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="live.html">Live</a></li>
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="party.html">Party up</a></li>
+      <li><a href="create.html">Create</a></li>
+      <li><a href="arcade.html">Arcade</a></li>
+      <li><a href="rewards.html">Rewards</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+  <main id="main" tabindex="-1">
+
+    <div class="narrow">
+      <h1 class="h-xl">Create your account</h1>
+      <p class="body-sm muted mb-5">You start with welcome points. Points have no cash value.</p>
+      <form action="profile.html" class="stack" id="signup-form" novalidate>
+        <p role="alert" class="alert" id="form-alert" hidden></p>
+        <div class="field"><label for="su-name">Display name</label><input id="su-name" name="name" class="input" autocomplete="nickname" minlength="2" maxlength="30" required></div>
+        <div class="field"><label for="su-email">Email</label><input id="su-email" name="email" class="input" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="field"><label for="su-password">Password (10+ characters)</label><div class="row" style="flex-wrap:nowrap;gap:8px"><input id="su-password" class="input" type="password" autocomplete="new-password" minlength="10" maxlength="128" required><button type="button" class="btn" id="su-pw-toggle" aria-pressed="false">Show</button></div></div>
+        <div class="field"><label for="su-steam_id">Steam ID (optional)</label>
+          <input id="su-steam_id" name="steam_id" class="input" inputmode="numeric" autocomplete="off" placeholder="7656119…" maxlength="17" pattern="7656119\d{10}" title="Enter the 17-digit Steam ID. It starts with 7656119.">
+          <span class="hint">Your 17-digit SteamID64. We save it as unverified until you sign in with Steam, so nobody can claim someone else’s.</span></div>
+        <fieldset aria-describedby="fp-help">
+          <legend>Favorite FaZe players</legend>
+          <p id="fp-help" class="small muted mb-3" style="font-weight:400" aria-live="polite">Pick up to 10. 0 chosen.</p>
+          <div class="stack">
+            <div><div class="label" style="margin-bottom:8px">Founders and early members</div><div class="wrap-row"><label class="pill"><input type="checkbox" name="favorite_players" value="ClipZ"><span>ClipZ</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Temperrr"><span>Temperrr</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Fakie"><span>Fakie</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Apex"><span>Apex</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Spratt"><span>Spratt</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Heist"><span>Heist</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Pamaj"><span>Pamaj</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Rain"><span>Rain</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="WaRTeK"><span>WaRTeK</span></label></div></div>
+            <div><div class="label" style="margin-bottom:8px">Creators and Call of Duty</div><div class="wrap-row"><label class="pill"><input type="checkbox" name="favorite_players" value="Rug"><span>Rug</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Banks"><span>Banks</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Adapt"><span>Adapt</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Jev"><span>Jev</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Teeqo"><span>Teeqo</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Censor"><span>Censor</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="ZooMaa"><span>ZooMaa</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Clayster"><span>Clayster</span></label></div></div>
+            <div><div class="label" style="margin-bottom:8px">Esports and streamers</div><div class="wrap-row"><label class="pill"><input type="checkbox" name="favorite_players" value="karrigan"><span>karrigan</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Twistzz"><span>Twistzz</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="s1mple"><span>s1mple</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Tfue"><span>Tfue</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Nickmercs"><span>Nickmercs</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Mongraal"><span>Mongraal</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Sway"><span>Sway</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Swagg"><span>Swagg</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Cented"><span>Cented</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Ewok"><span>Ewok</span></label><label class="pill"><input type="checkbox" name="favorite_players" value="Deestroying"><span>Deestroying</span></label></div></div>
+            <div id="su-extra-wrap" hidden><div class="label" style="margin-bottom:8px">Your additions</div><div class="wrap-row" id="su-extra"></div></div>
+            <div class="field"><label for="su-custom">Someone else?</label><div class="row" style="flex-wrap:nowrap;gap:8px"><input id="su-custom" class="input" maxlength="30" autocomplete="off"><button type="button" class="btn" id="su-add">Add</button></div></div>
+          </div>
+        </fieldset>
+        <div class="row"><button type="submit" class="btn btn-primary">Create account</button><a href="login.html" class="link">I already have an account</a></div>
+        <div style="border-top:1px solid var(--color-border);padding-top:16px"><a href="profile.html" class="btn" id="steam-btn">Continue with Steam instead</a></div>
+      </form>
+    </div>
+  </main>
+  <footer class="foot">Unofficial fan project in development. Points have no cash value. 13+ only; no private messages in parties.</footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

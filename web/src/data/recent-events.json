@@ -1,0 +1,30 @@
+[
+ {
+  "id": "e1",
+  "title": "BLAST R6 Major Osaka: Grand Final",
+  "when": "Sun Nov 15",
+  "detail": "FaZe face DarkZero for the title after sweeping Falcons 2-0 in the semi-final.",
+  "upcoming": true
+ },
+ {
+  "id": "e2",
+  "title": "Osaka semi-final win",
+  "when": "Sat Nov 14",
+  "detail": "2-0 over Falcons, avenging their Round 3 win on Nov 9.",
+  "upcoming": false
+ },
+ {
+  "id": "e3",
+  "title": "CS2 wins Roman Imperium Cup IX",
+  "when": "Oct 10",
+  "detail": "First CS2 trophy in about 900 days, over NAVI Junior.",
+  "upcoming": false
+ },
+ {
+  "id": "e4",
+  "title": "FaZe Vegas: CDL champions",
+  "when": "Jul 19",
+  "detail": "5-2 over OpTic Texas for the second CDL title.",
+  "upcoming": false
+ }
+]

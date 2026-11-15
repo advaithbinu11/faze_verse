@@ -1,0 +1,28 @@
+{
+  "name": "fazevault-backend",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "twitch": "node --watch src/twitch-server.js",
+    "db:setup": "node src/scripts/setup-db.js",
+    "db:seed-credentials": "node src/scripts/seed-credentials.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "private": "true",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.9.0",
+    "zod": "^3.25.76"
+  }
+}

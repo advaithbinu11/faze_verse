@@ -1,0 +1,12 @@
+node_modules/
+.env
+src/mongo-uri.local.js
+seed-credentials.local.txt
+.DS_Store
+.Rhistory
+dist/
+*.save
+.env.local
+# Third-party brand kit and reference documents (not part of the app)
+drive-download-*/
+Fazeclanhistory.pdf

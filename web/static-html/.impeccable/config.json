@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "static-html/styles.css"
+        ],
+        "createdAt": "2026-11-15T02:26:56.000Z",
+        "reason": "Faithful port: the original Party.jsx note uses border-l-4 border-accent-text; conversion should not alter the design. Decided by assistant, not user-confirmed."
+      }
+    ]
+  }
+}
