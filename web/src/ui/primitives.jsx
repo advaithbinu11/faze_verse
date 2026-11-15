@@ -4,7 +4,7 @@ import { readableOn } from '../data/colors.js';
 const cx = (...c) => c.filter(Boolean).join(' ');
 
 export function buttonStyles(variant = 'secondary', className) {
-  const base = 'inline-flex min-h-[40px] items-center justify-center gap-2 whitespace-nowrap rounded-sm border-2 px-3.5 py-2 text-sm font-bold transition-colors duration-fast active:translate-y-px disabled:cursor-not-allowed disabled:opacity-45 disabled:active:translate-y-0';
+  const base = 'inline-flex min-h-[40px] [@media(pointer:coarse)]:min-h-[44px] items-center justify-center gap-2 whitespace-nowrap rounded-sm border-2 px-3.5 py-2 text-sm font-bold transition-colors duration-fast active:translate-y-px disabled:cursor-not-allowed disabled:opacity-45 disabled:active:translate-y-0';
   const tone = variant === 'primary'
     ? 'border-accent bg-accent text-on-accent hover:brightness-90'
     : variant === 'danger'
@@ -28,7 +28,7 @@ export function Pill({ pressed, className, children, ...rest }) {
       type="button"
       aria-pressed={pressed}
       className={cx(
-        'min-h-[40px] rounded-full border-control px-3 py-1.5 text-sm transition-colors duration-fast',
+        'min-h-[40px] [@media(pointer:coarse)]:min-h-[44px] rounded-full border-control px-3 py-1.5 text-sm transition-colors duration-fast',
         pressed ? 'border-accent bg-accent text-on-accent' : 'border-text bg-bg text-text hover:bg-surface',
         className,
       )}
@@ -85,7 +85,15 @@ export function ErrorState({ error, onRetry }) {
   );
 }
 
-export function Avatar({ name, size = 42, empty, color }) {
+// `logo` ({ image, backdrop }) is a purchased FaZe profile logo; without one the avatar shows initials.
+export function Avatar({ name, size = 42, empty, color, logo }) {
+  if (logo?.image && !empty) {
+    return (
+      <div aria-hidden="true" style={{ width: size, height: size, background: logo.backdrop }} className="grid flex-none place-items-center overflow-hidden rounded-full border border-border-input">
+        <img src={logo.image} alt="" width={size} height={size} loading="lazy" decoding="async" className="h-auto w-[68%]" />
+      </div>
+    );
+  }
   const filled = !empty && color;
   return (
     <div

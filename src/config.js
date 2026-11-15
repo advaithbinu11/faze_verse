@@ -67,8 +67,16 @@ export const config = {
     port: int('TWITCH_PORT', 3500),
     clientId: process.env.TWITCH_CLIENT_ID ?? '',
     clientSecret: process.env.TWITCH_CLIENT_SECRET ?? '',
-    // Live-stream watch points: 1 point per 30s of verified playback, up to this many per UTC day.
-    dailyPointCap: int('TWITCH_DAILY_POINT_CAP', 100),
+    // Live-stream watch points: 10 points per 30s of verified playback, up to this many per UTC day (1000 = 100 minutes).
+    dailyPointCap: int('TWITCH_DAILY_POINT_CAP', 1000),
+  },
+  // RAG for the welcome-screen fun fact. VOYAGE_API_KEY is a MongoDB Atlas-issued key, so embeddings go through Atlas (ai.mongodb.com).
+  rag: {
+    voyageKey: process.env.VOYAGE_API_KEY ?? '',
+    voyageUrl: process.env.VOYAGE_API_URL || 'https://ai.mongodb.com/v1/embeddings',
+    voyageModel: process.env.VOYAGE_MODEL || 'voyage-4',
+    openaiKey: process.env.OPENAI_API_KEY ?? '',
+    openaiModel: process.env.OPENAI_MODEL || 'gpt-4o-mini',
   },
   watchMinRatio: Number(process.env.WATCH_MIN_RATIO ?? 0.9),
   partyMaxSize: int('PARTY_MAX_SIZE', 5),

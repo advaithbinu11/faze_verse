@@ -3,13 +3,6 @@ import { Link, useNavigate } from 'react-router';
 import { EmptyState, buttonStyles } from '../ui/primitives.jsx';
 import { useAuth } from '../state/AuthContext.jsx';
 
-export const Stub = ({ title, body }) => (
-  <div className="max-w-feed">
-    <h1 className="mb-3 text-xl">{title}</h1>
-    <EmptyState title="Coming soon" body={body} action={<Link to="/live" className={buttonStyles('primary')}>Go to the live match</Link>} />
-  </div>
-);
-
 // The API redirects here with #token=...; keeping it in the fragment keeps it out of server logs.
 export function AuthCallback() {
   const { acceptToken } = useAuth();

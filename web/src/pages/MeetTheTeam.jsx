@@ -38,7 +38,7 @@ function Carousel() {
       <div className="mb-2 flex justify-end">
         <Button aria-pressed={paused} onClick={() => setPaused((p) => !p)}>{paused ? 'Play carousel' : 'Pause carousel'}</Button>
       </div>
-      <div className="marquee -mx-[var(--page-gutter)]" data-paused={paused} role="region" aria-label="Featured members" tabIndex={0}>
+      <div className="marquee -mx-[var(--page-gutter)] lg:group-data-[sidebar=true]/shell:ml-0" data-paused={paused} role="region" aria-label="Featured members" tabIndex={0}>
         <div className="marquee-track" style={{ '--marquee-duration': `${roster.featured.length * 7}s` }}>
           <ul className="m-0 flex list-none p-0">{roster.featured.map((p) => <FeaturedCard key={p.name} person={p} />)}</ul>
           <ul className="m-0 flex list-none p-0" aria-hidden="true">{roster.featured.map((p) => <FeaturedCard key={p.name} person={p} decorative />)}</ul>

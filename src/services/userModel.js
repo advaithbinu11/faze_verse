@@ -1,5 +1,6 @@
 import { col } from '../db.js';
 import { isEpicGame } from './games.js';
+import { activeLogoOf } from './logos.js';
 
 // The existing `users` collection predates this API, so its field names win:
 //   user_name (API: name), faze_teams_followed (API: teams_followed), steam_id, epic_id, faze_points.
@@ -14,6 +15,7 @@ export async function toPublicUser(u) {
     regions: u.regions ?? [],
     favorite_players: u.favorite_players ?? [],
     steam_game_count: await col('user_games').countDocuments({ user_id: u._id }),
+    profile_logo: await activeLogoOf(u),
   };
 }
 

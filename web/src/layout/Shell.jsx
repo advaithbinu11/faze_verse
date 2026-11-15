@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { Button, Chip, buttonStyles } from '../ui/primitives.jsx';
+import GamesSidebar from './GamesSidebar.jsx';
+import WalletBurst from '../ui/WalletBurst.jsx';
 import { useAuth } from '../state/AuthContext.jsx';
 
 const NAV = [
-  ['/', 'Home'], ['/welcome', 'Welcome'], ['/live', 'Live'], ['/feed', 'Feed'], ['/party', 'Party up'],
-  ['/create', 'Create'], ['/arcade', 'Arcade'], ['/rewards', 'Rewards'], ['/merch', 'Merch'], ['/profile', 'Profile'],
+  ['/', 'Home'], ['/welcome', 'Welcome'], ['/live', 'Live'], ['/feed', 'Feed'], ['/shorts', 'Shorts'], ['/party', 'Party up'],
+  ['/rewards', 'Rewards'], ['/merch', 'Merch'], ['/profile', 'Profile'],
 ];
 
 function useTheme() {
@@ -19,9 +21,17 @@ function useTheme() {
   return [isDark, () => setTheme(isDark ? 'light' : 'dark')];
 }
 
+// Desktop-only: whether the games sidebar is collapsed to its rail. Remembered between visits; storage failures just fall back to open.
+function useSidebarHidden() {
+  const [hidden, setHidden] = useState(() => { try { return localStorage.getItem('fv_sidebar') === 'closed'; } catch { return false; } });
+  const set = (v) => { setHidden(v); try { v ? localStorage.setItem('fv_sidebar', 'closed') : localStorage.removeItem('fv_sidebar'); } catch { /* storage blocked */ } };
+  return [hidden, set];
+}
+
 export default function Shell() {
   const { user, status, demo, logout } = useAuth();
   const [isDark, toggleTheme] = useTheme();
+  const [sidebarHidden, setSidebarHidden] = useSidebarHidden();
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); document.getElementById('main')?.focus({ preventScroll: true }); }, [pathname]);
 
@@ -57,7 +67,14 @@ export default function Shell() {
         </ul>
       </nav>
 
-      <main id="main" tabIndex={-1} className="gutter outline-none"><Outlet /></main>
+      {/* `group/shell` + data-sidebar let full-bleed children (hero, strips) stop their left bleed where the sidebar sits.
+          The sidebar column is always there for signed-in players: 250px open, a 44px rail when collapsed. */}
+      <div data-sidebar={user ? 'true' : 'false'} className={`group/shell gutter ${user ? `grid gap-8 ${sidebarHidden ? 'lg:grid-cols-[44px_minmax(0,1fr)] lg:gap-4' : 'lg:grid-cols-[250px_minmax(0,1fr)]'}` : ''}`}>
+        <GamesSidebar collapsed={sidebarHidden} onToggle={() => setSidebarHidden(!sidebarHidden)} />
+        <main id="main" tabIndex={-1} className="min-w-0 outline-none"><Outlet /></main>
+      </div>
+
+      <WalletBurst />
 
       <footer className="gutter mt-9 border-t border-border pt-3.5 text-[13px] text-muted">
         Unofficial fan project in development. Points have no cash value. 13+ only; no private messages in parties.

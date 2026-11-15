@@ -29,6 +29,9 @@ export const seedClusters = [
   { game_id: '730', game_name: 'Counter-Strike 2', players: 184, shared_regions: ['NA'], shared_teams: ['FaZe'], open_parties: [] },
   { game_id: '570', game_name: 'Dota 2', players: 41, shared_regions: ['NA'], shared_teams: [], open_parties: [] },
   { game_id: '252490', game_name: 'Rust', players: 17, shared_regions: [], shared_teams: ['FaZe'], open_parties: [] },
+  { game_id: 'Valorant', game_name: 'Valorant', players: 0, shared_regions: [], shared_teams: [], open_parties: [] },
+  { game_id: 'Apex Legends', game_name: 'Apex Legends', players: 0, shared_regions: [], shared_teams: [], open_parties: [] },
+  { game_id: 'Rocket League', game_name: 'Rocket League', players: 0, shared_regions: [], shared_teams: [], open_parties: [] }, // Epic: open to everyone
   { game_id: 'Fortnite', game_name: 'Fortnite', players: 96, shared_regions: ['NA'], shared_teams: ['FaZe'], open_parties: [] }, // Epic Games Store: no Steam library needed
 ];
 
@@ -37,9 +40,18 @@ export const seedParties = [
   { party_id: 'p-2', game_id: '570', game_name: 'Dota 2', region: 'NA', num_people: 1, people: ['d'] },
 ];
 
+// Authors reuse the demo friend/suggestion ids so their names open a player page in demo mode, as they do against the API.
+const who = (id, name, profile_color) => ({ id, name, profile_color });
+const clutch = who('f1', 'clutch_kai', '#2563eb'), nova = who('f2', 'nova_strike', '#64748b'), ember = who('f3', 'ember_fox', '#f97316');
+const vex = who('s1', 'vex_atlas', '#f5f5f5'), pixel = who('s2', 'pixel_ranger', '#06b6d4'), tess = who('s3', 'turbo_tess', '#111111');
+const c = (id, author, text, h) => ({ id, author, text, at: hours(h) });
 export const seedPosts = [
-  { id: 'post-1', author: 'ClutchOrKick', text: 'That eco round call on Map 1 was unreal.', likes: 24, liked: false, at: hours(-3) },
-  { id: 'post-2', author: 'northside_nia', text: 'Who is queueing CS2 tonight? NA, chill vibes.', likes: 9, liked: false, at: hours(-6) },
+  { id: 'post-1', author: clutch, text: 'That eco round call on Map 1 was unreal.', likes: 24, liked: false, at: hours(-3), comments: [c('c-1', nova, 'Whoever made that call deserves a raise.', -2.8), c('c-2', ember, 'Rewatched it three times.', -2.5)] },
+  { id: 'post-2', author: tess, text: 'Who is queueing CS2 tonight? NA, chill vibes.', likes: 9, liked: false, at: hours(-6), comments: [c('c-3', vex, 'Count me in.', -5.5)] },
+  { id: 'post-3', author: vex, text: 'Shorts tab is dangerous. Told myself five minutes, watched twenty.', likes: 17, liked: false, at: hours(-9), comments: [c('c-4', pixel, 'Same here.', -8.6), c('c-5', clutch, 'This is the way.', -8)] },
+  { id: 'post-4', author: ember, text: 'Looking for a fifth for Apex. Must tolerate bad jokes and worse aim.', likes: 6, liked: false, at: hours(-14), comments: [] },
+  { id: 'post-5', author: pixel, text: 'Hot take: the old ILLCAMS compilations still hold up. Peak YouTube.', likes: 31, liked: false, at: hours(-20), comments: [c('c-6', tess, 'Bold take, but I respect it.', -19), c('c-7', nova, 'You are not wrong.', -18)] },
+  { id: 'post-6', author: nova, text: 'Finally got my party into one voice channel without anyone muted. Small wins.', likes: 12, liked: false, at: hours(-30), comments: [c('c-8', ember, 'Run it back tomorrow?', -29)] },
 ];
 
 export const seedPerks = [
@@ -51,6 +63,7 @@ export const seedPerks = [
   { id: 'wallpaper', category: 'Digital', title: 'Desktop wallpaper pack', body: 'Four exclusive wallpapers.', cost: 300, kind: 'digital' },
   { id: 'discord-role', category: 'Digital', title: 'Discord supporter role', body: 'A supporter role and colour in the community Discord.', cost: 600, kind: 'digital' },
   { id: 'badge', category: 'Digital', title: 'Profile badge', body: 'Show a Vault badge next to your name.', cost: 800, kind: 'digital' },
+  { id: 'meet-streamer', category: 'Meet and greet', title: 'Meet your favorite FaZe streamer', body: 'Redeem for a claim code to meet your favorite FaZe streamer.', cost: 2000000, kind: 'digital' },
   { id: 'poster-raffle', category: 'Raffles', title: 'Signed poster raffle entry', body: 'One entry per redemption.', cost: 2500, kind: 'raffle' },
   { id: 'shoutout-raffle', category: 'Raffles', title: 'Creator shoutout raffle entry', body: 'One entry per redemption into the creator shoutout draw.', cost: 3500, kind: 'raffle' },
   { id: 'jersey-raffle', category: 'Raffles', title: 'Signed jersey raffle entry', body: 'One entry per redemption.', cost: 5000, kind: 'raffle' },

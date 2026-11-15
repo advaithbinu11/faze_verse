@@ -12,6 +12,7 @@ export const PERKS = [
   { id: 'wallpaper', category: 'Digital', title: 'Desktop wallpaper pack', body: 'Four exclusive wallpapers.', cost: 300, kind: 'digital' },
   { id: 'discord-role', category: 'Digital', title: 'Discord supporter role', body: 'A supporter role and colour in the community Discord.', cost: 600, kind: 'digital' },
   { id: 'badge', category: 'Digital', title: 'Profile badge', body: 'Show a Vault badge next to your name.', cost: 800, kind: 'digital' },
+  { id: 'meet-streamer', category: 'Meet and greet', title: 'Meet your favorite FaZe streamer', body: 'Redeem for a claim code to meet your favorite FaZe streamer.', cost: 2_000_000, kind: 'digital' },
   { id: 'poster-raffle', category: 'Raffles', title: 'Signed poster raffle entry', body: 'One entry per redemption.', cost: 2500, kind: 'raffle' },
   { id: 'shoutout-raffle', category: 'Raffles', title: 'Creator shoutout raffle entry', body: 'One entry per redemption into the creator shoutout draw.', cost: 3500, kind: 'raffle' },
   { id: 'jersey-raffle', category: 'Raffles', title: 'Signed jersey raffle entry', body: 'One entry per redemption.', cost: 5000, kind: 'raffle' },

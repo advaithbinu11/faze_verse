@@ -6,6 +6,8 @@ import { HttpError } from '../errors.js';
 import { requireAuth } from '../middleware/auth.js';
 import * as steam from '../services/steam.js';
 import { HEX_COLOR } from '../services/colors.js';
+import { GAME_CATALOG, canonicalGame } from '../services/games.js';
+import { activeLogoOf } from '../services/logos.js';
 import { findSimilarUsers } from '../services/similar.js';
 import { saveGames, toPublicUser, toStoredProfile } from '../services/userModel.js';
 import { buildAuthorizeUrl, linkingEnabled, syncDiscordParties } from '../services/discordLink.js';
@@ -84,6 +86,30 @@ router.get('/:userId/friends', async (req, res) => {
   );
 });
 
+// Every catalogue game with the friends who play it (online first), for the side list. Only names and online
+// status are returned, the same card the friends list already shows.
+router.get('/me/friend-games', async (req, res) => {
+  const friendIds = (req.user.friends ?? []).filter((f) => f instanceof ObjectId).slice(0, 100);
+  const [friends, owned, mine] = await Promise.all([
+    friendIds.length ? col('users').find({ _id: { $in: friendIds } }, { projection: { user_name: 1, profile_color: 1, online: 1 } }).toArray() : [],
+    friendIds.length ? col('user_games').find({ user_id: { $in: friendIds } }).project({ user_id: 1, game_name: 1, _id: 0 }).toArray() : [],
+    col('user_games').find({ user_id: req.user._id }).project({ game_name: 1, _id: 0 }).toArray(),
+  ]);
+  const card = new Map(friends.map((f) => [String(f._id), { id: f._id, name: f.user_name ?? 'Unknown', profile_color: f.profile_color ?? null, online: f.online === true }]));
+  const byGame = new Map(GAME_CATALOG.map(([name]) => [name, new Map()]));
+  for (const o of owned) {
+    const game = canonicalGame(o.game_name);
+    const friend = card.get(String(o.user_id));
+    if (game && friend) byGame.get(game).set(String(o.user_id), friend);
+  }
+  const myGames = new Set(mine.map((g) => canonicalGame(g.game_name)).filter(Boolean));
+  res.json(GAME_CATALOG.map(([name]) => ({
+    game: name,
+    mine: myGames.has(name),
+    friends: [...byGame.get(name).values()].sort((a, b) => Number(b.online) - Number(a.online) || a.name.localeCompare(b.name)),
+  })));
+});
+
 // ---- Other players' pages -------------------------------------------------------------------
 // Only fields a player shows on their own page are returned; email, Steam/Discord ids and the points
 // ledger are never exposed to other users.
@@ -117,6 +143,7 @@ router.get('/:userId/profile', async (req, res) => {
     profile_color: target.profile_color ?? null,
     online: target.online === true,
     faze_points: target.faze_points ?? 0,
+    profile_logo: await activeLogoOf(target),
     teams_followed: teams,
     favorite_players: target.favorite_players ?? [],
     games: games.map((g) => ({ name: g.game_name, hours: g.hours ?? null })),

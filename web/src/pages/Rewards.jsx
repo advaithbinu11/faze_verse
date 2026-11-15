@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Button, Chip, Dialog, EmptyState, ErrorState, Skeleton, buttonStyles, errorMessage } from '../ui/primitives.jsx';
+import { Avatar, Button, Chip, Dialog, EmptyState, ErrorState, Skeleton, buttonStyles, errorMessage } from '../ui/primitives.jsx';
 import { api } from '../data/index.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { useAuth } from '../state/AuthContext.jsx';
@@ -17,8 +17,16 @@ function terms(r) {
   return 'Keep this code to claim it';
 }
 
-function Code({ value }) {
+// A used code is spent: it is shown struck through, cannot be selected, and has no Copy button.
+function Code({ value, used }) {
   const toast = useToast();
+  if (used) {
+    return (
+      <span className="inline-flex items-center gap-2">
+        <code className="select-none rounded-sm bg-surface px-2 py-1 font-mono text-sm font-medium text-muted line-through" aria-label={`Code ${value}, already used`}>{value}</code>
+      </span>
+    );
+  }
   const copy = async () => {
     try { await navigator.clipboard.writeText(value); toast('Code copied.'); } catch { toast('Select the code to copy it.', 'error'); }
   };
@@ -35,6 +43,9 @@ export default function Rewards() {
   const toast = useToast();
   const perks = useAsync(() => api.listPerks(), []);
   const mine = useAsync(() => (user ? api.listMyPerks() : []), [user?._id]);
+  const logos = useAsync(() => (user && api.listLogos ? api.listLogos() : null), [user?._id]);
+  const [logoStep, setLogoStep] = useState(null); // null | 'confirm' | { logo }
+  const [logoBusy, setLogoBusy] = useState(false);
   const [target, setTarget] = useState(null);
   const [result, setResult] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -49,6 +60,22 @@ export default function Rewards() {
       await Promise.all([refresh(), mine.reload()]);
       setResult(redemption);
     } catch (e) { toast(errorMessage(e), 'error'); close(); } finally { setBusy(false); }
+  };
+
+  const logoCost = logos.data?.cost ?? 2000;
+  const logoShort = user && user.faze_points < logoCost;
+  const buyLogo = async () => {
+    setLogoBusy(true);
+    try {
+      const { logo } = await api.buyLogo();
+      await Promise.all([refresh(), logos.reload()]);
+      setLogoStep({ logo });
+    } catch (e) { toast(errorMessage(e), 'error'); setLogoStep(null); } finally { setLogoBusy(false); }
+  };
+  const useLogo = async (logo) => {
+    setLogoBusy(true);
+    try { await api.setActiveLogo(logo.id); await Promise.all([refresh(), logos.reload()]); toast('Profile logo switched on.'); setLogoStep(null); }
+    catch (e) { toast(errorMessage(e), 'error'); } finally { setLogoBusy(false); }
   };
 
   const groups = [...new Set((perks.data ?? []).map((p) => p.category ?? 'More rewards'))];
@@ -68,11 +95,30 @@ export default function Rewards() {
                   <b>{r.title}</b>
                   <Chip on={r.status === 'active'}>{r.status === 'used' ? `Used ${r.used_at ? when(r.used_at) : ''}` : r.usable ? 'Ready to use' : 'Claimed'}</Chip>
                 </div>
-                <Code value={r.code} />
+                <Code value={r.code} used={r.status === 'used'} />
                 <div className="text-sm text-muted">{terms(r)} · redeemed {when(r.created_at)}</div>
                 {r.usable && <div><Link to="/merch" className="text-sm font-bold text-accent-text underline">Shop merch to use it</Link></div>}
               </li>
             ))}
+          </ul>
+        </section>
+      )}
+
+      {api.buyLogo && (
+        <section aria-labelledby="logo-h" className="mb-6">
+          <h2 id="logo-h" className="text-lg">Profile logo</h2>
+          <ul className="m-0 mt-1 list-none p-0">
+            <li className="flex items-center gap-3 border-t border-border py-4">
+              <div className="min-w-0 grow">
+                <div className="font-bold">Random FaZe profile logo</div>
+                <div className="text-body-sm text-muted">A random FaZe mark from the official logo set on a random backdrop. Every purchase is a new one. Switch it on in your profile.</div>
+                {user && logos.data && <div className="mt-1 text-sm text-muted">You own {logos.data.owned.length} of {logos.data.total}. {logos.data.owned.length > 0 && <Link to="/profile" className="font-bold text-accent-text underline">Choose in Profile</Link>}</div>}
+              </div>
+              <span className="whitespace-nowrap font-bold text-accent-text">{logoCost.toLocaleString()} pts</span>
+              {user
+                ? <Button variant="primary" disabled={logoShort} aria-label="Buy a random profile logo" onClick={() => setLogoStep('confirm')}>{logoShort ? 'Not enough' : 'Redeem'}</Button>
+                : <Button onClick={login}>Sign in</Button>}
+            </li>
           </ul>
         </section>
       )}
@@ -102,6 +148,27 @@ export default function Rewards() {
             </ul>
           </section>
         ))}
+
+      <Dialog open={logoStep !== null} onClose={() => setLogoStep(null)} title={logoStep && logoStep !== 'confirm' ? 'Your new logo' : 'Buy a profile logo'}>
+        {logoStep && logoStep !== 'confirm' ? (
+          <>
+            <div className="mt-1 grid place-items-center"><Avatar name={user?.name ?? ''} size={140} logo={logoStep.logo} /></div>
+            <p className="mt-3 text-body-sm">It is saved to your profile. Use it now, or pick any logo you own later in Profile.</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Button variant="primary" loading={logoBusy} onClick={() => useLogo(logoStep.logo)}>Use it now</Button>
+              <Button onClick={() => setLogoStep(null)}>Keep my current look</Button>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="text-body-sm">Spend {logoCost.toLocaleString()} points on a random FaZe profile logo? You will not know which one until you buy. This cannot be undone.</p>
+            <div className="mt-4 flex gap-2">
+              <Button variant="primary" loading={logoBusy} onClick={buyLogo}>Spend points</Button>
+              <Button onClick={() => setLogoStep(null)}>Cancel</Button>
+            </div>
+          </>
+        )}
+      </Dialog>
 
       <Dialog open={Boolean(target)} onClose={close} title={result ? 'Redeemed!' : 'Confirm redemption'}>
         {result ? (

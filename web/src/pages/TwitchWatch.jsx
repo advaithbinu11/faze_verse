@@ -63,7 +63,7 @@ function Player({ channel, video, onStatus, onPlaying }) {
   }, [channel, video]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-md bg-black">
+    <div className="relative aspect-video overflow-hidden rounded-md bg-black lg:aspect-auto lg:h-[var(--watch-h)]">
       <div ref={host} className="h-full w-full" />
       {error && <p role="alert" className="absolute inset-0 m-0 grid place-items-center p-4 text-center text-sm text-white">{error} Check your connection and try again.</p>}
     </div>
@@ -93,7 +93,7 @@ function Comments({ channel }) {
       </form>
       {list.length === 0
         ? <p className="m-0 text-body-sm text-muted">No comments on this stream yet.</p>
-        : <ul className="m-0 grid max-h-[320px] list-none gap-2 overflow-auto p-0">
+        : <ul className="m-0 grid max-h-[min(320px,45dvh)] list-none lg:max-h-[calc(var(--watch-h)-8rem)] gap-2 overflow-auto p-0">
             {list.map((c, i) => (
               <li key={i} className="flex items-start gap-2 text-body-sm">
                 <Avatar name={c.n} color={c.color ?? undefined} size={28} />
@@ -190,7 +190,7 @@ export function TwitchWatch() {
   }, []);
 
   return (
-    <section aria-labelledby="tw-h" className="grid gap-4">
+    <section aria-labelledby="tw-h" className="grid gap-4" style={{ '--watch-h': 'max(340px, calc(100dvh - 18rem))' }}>
       <div>
         <div className="label">Live streams</div>
         <h1 id="tw-h" className="text-xl">Watch</h1>
@@ -215,8 +215,10 @@ export function TwitchWatch() {
         </form>
       )}
 
-      <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
-        <div className="grid content-start gap-3">
+      {/* On large screens the player and chat share one height taken from the window (--watch-h: the screen minus the header,
+          title and channel row), so the card fills the screen without running past its bottom edge. Below that it stacks. */}
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)]">
+        <div className="grid min-w-0 content-start gap-3">
           <div className="relative">
             <Player key={`${ch.c}:${replay?.id ?? ''}`} channel={ch.c} video={replay?.id} onStatus={setStatus} onPlaying={(p) => { playing.current = p; }} />
             <div ref={burst} aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden" />
@@ -240,20 +242,20 @@ export function TwitchWatch() {
           </div>
         </div>
 
-        <div className="grid content-start gap-3">
+        <div className="grid min-w-0 content-start gap-3">
           <div role="group" aria-label="Chat" className="flex gap-2">
             <button type="button" aria-pressed={pane === 'chat'} onClick={() => setPane('chat')} className={`min-h-[40px] flex-1 rounded-sm border-2 px-3 text-sm font-bold ${pane === 'chat' ? 'border-accent bg-accent text-on-accent' : 'border-text bg-bg'}`}>Twitch chat</button>
             <button type="button" aria-pressed={pane === 'vault'} onClick={() => setPane('vault')} className={`min-h-[40px] flex-1 rounded-sm border-2 px-3 text-sm font-bold ${pane === 'vault' ? 'border-accent bg-accent text-on-accent' : 'border-text bg-bg'}`}>Vault comments</button>
           </div>
           {pane === 'chat'
-            ? <iframe key={ch.c} title={`${ch.n} Twitch chat`} className="h-[420px] w-full rounded-md border-0 bg-surface lg:h-[520px]"
+            ? <iframe key={ch.c} title={`${ch.n} Twitch chat`} className="h-[min(420px,60dvh)] w-full rounded-md border-0 bg-surface lg:h-[calc(var(--watch-h)-3.25rem)]"
                 src={`https://www.twitch.tv/embed/${encodeURIComponent(ch.c)}/chat?parent=${encodeURIComponent(location.hostname)}${darkMode() ? '&darkpopout' : ''}`} />
             : <Comments channel={ch.c} />}
         </div>
       </div>
       <p className="m-0 text-body-sm text-muted" aria-live="polite">
         {!api.twitchBeat ? null : user
-          ? <>Earn <b>1 point</b> for every 30 seconds you watch{points ? <> · {points.today} of {points.cap} points earned today</> : null}.</>
+          ? <>Earn <b>10 points</b> for every 30 seconds you watch{points ? <> · {points.today} of {points.cap} points earned today</> : null}.</>
           : 'Sign in to earn points while you watch.'}
       </p>
       <p className="m-0 text-[13px] text-muted">LIVE or OFFLINE comes from the player itself. Channels you add are kept on this device.</p>

@@ -6,6 +6,7 @@ import { useAuth } from '../state/AuthContext.jsx';
 import { useToast } from '../state/ToastContext.jsx';
 import { WatchCard } from './WatchCard.jsx';
 import { TwitchWatch } from './TwitchWatch.jsx';
+import MerchForYou from './MerchForYou.jsx';
 
 const PoolScene = lazy(() => import('../three/PoolScene.jsx'));
 const fmt = (n) => n.toLocaleString();
@@ -98,7 +99,7 @@ function Matches() {
 
   if (events.loading) return <div className="grid gap-4"><Skeleton className="h-72" /><Skeleton className="h-40" /></div>;
   if (events.error) return <ErrorState error={events.error} onRetry={events.reload} />;
-  if (!ev) return <EmptyState title="No matches right now" body="When the next match is scheduled it will show up here with its prediction pool." />;
+  if (!ev) return <MerchForYou />;
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">

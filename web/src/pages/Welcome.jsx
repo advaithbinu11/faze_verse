@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
-import { Avatar, EmptyState, ErrorState, Skeleton, buttonStyles } from '../ui/primitives.jsx';
+import { Avatar, Button, Chip, EmptyState, ErrorState, Skeleton, buttonStyles } from '../ui/primitives.jsx';
 import { api } from '../data/index.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { useAuth } from '../state/AuthContext.jsx';
@@ -7,6 +8,42 @@ import { DiscordLinkBanner } from '../ui/DiscordLink.jsx';
 import { FriendRow, OnlineStatus, personRow } from '../ui/people.jsx';
 
 const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+// A fun fact from the FaZe history, picked from what the player follows and plays. Hidden if it cannot be loaded:
+// it is a nicety, not something worth an error banner on the welcome page.
+function FunFact() {
+  const fact = useAsync(() => (api.getFunFact ? api.getFunFact() : null), []);
+  const [next, setNext] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const current = next ?? fact.data;
+  if (!api.getFunFact || fact.error || (!fact.loading && !current)) return null;
+  const another = async () => {
+    setBusy(true);
+    try { setNext(await api.newFunFact()); } catch { /* keep the current fact */ } finally { setBusy(false); }
+  };
+  return (
+    <section aria-labelledby="ff-h" className="frame grid gap-2 p-5">
+      <span id="ff-h" className="label">Did you know?{current?.angle ? ` · ${current.angle}` : ''}</span>
+      {fact.loading ? (
+        <div aria-busy="true" className="grid gap-2"><Skeleton className="h-4 w-full" /><Skeleton className="h-4 w-2/3" /></div>
+      ) : (
+        <p className="m-0 max-w-[68ch] text-body" aria-live="polite">{current.fact}</p>
+      )}
+      {!fact.loading && <div><Button type="button" onClick={another} loading={busy}>Another one</Button></div>}
+    </section>
+  );
+}
+
+// Who the player follows, shown under their avatar: streamers/players first, then teams.
+function FollowBadges({ teams = [], players = [] }) {
+  if (!teams.length && !players.length) return <p className="m-0 text-sm text-muted">Not following anyone yet. Add streamers in your profile.</p>;
+  return (
+    <ul aria-label="Following" className="m-0 flex max-w-full list-none flex-wrap justify-center gap-1.5 p-0">
+      {players.map((p) => <li key={`p-${p}`}><Chip accent>{p}</Chip></li>)}
+      {teams.map((t) => <li key={`t-${t}`}><Chip>{t}</Chip></li>)}
+    </ul>
+  );
+}
 
 function SuggestionRow({ match }) {
   const shared = [plural(match.shared_games.length, 'game'), match.shared_teams.length ? plural(match.shared_teams.length, 'team') : null].filter(Boolean).join(' · ');
@@ -41,14 +78,16 @@ export default function Welcome() {
     <div className="grid gap-10">
       <h1 className="text-display break-words">Welcome, {user.name}!</h1>
       <DiscordLinkBanner />
+      <FunFact />
 
       <div className="grid gap-8 md:grid-cols-2 md:gap-10">
         <section aria-labelledby="me-h" className="frame grid place-items-center gap-4 p-8 text-center">
-          <Avatar name={user.name} size={140} color={user.profile_color} />
+          <Avatar name={user.name} size={140} color={user.profile_color} logo={user.profile_logo} />
           <div className="min-w-0">
             <h2 id="me-h" className="break-words text-xl">{user.name}</h2>
             <p className="text-body-sm text-muted">{user.faze_points.toLocaleString()} points</p>
           </div>
+          <FollowBadges teams={user.teams_followed} players={user.favorite_players} />
           <Link to="/profile" className={buttonStyles()}>Edit profile</Link>
         </section>
 

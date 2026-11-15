@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { Button, Chip, Field, Pill, errorMessage, inputClass } from '../ui/primitives.jsx';
 import { CATEGORIES, MAX_QTY, MERCH, POINTS_PER_BLOCK, SIGNATURE_POINTS, SIZES, isSized, pointsEarned } from '../data/merch.js';
 import { api } from '../data/index.js';
@@ -55,12 +55,22 @@ export default function Merch() {
   const [errors, setErrors] = useState({});
   const [order, setOrder] = useState(null);
   const heading = useRef(null);
+  const [params, setParams] = useSearchParams();
 
   // Each step is a new screen: scroll to the top and move focus to its heading for keyboard and screen-reader users.
   useEffect(() => { window.scrollTo(0, 0); heading.current?.focus({ preventScroll: true }); }, [view]);
 
   const qty = clampQty(qtyText);
   const sized = item ? isSized(item) : false;
+
+  // /merch?item=<id> opens that piece straight away (the carousel on the Live page links here).
+  useEffect(() => {
+    const id = params.get('item');
+    if (!id) return;
+    const m = MERCH.find((x) => x.id === id);
+    if (m) { setItem(m); setSize('M'); setQtyText('1'); setView('item'); }
+    setParams({}, { replace: true });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const open = (m) => { setItem(m); setSize('M'); setQtyText('1'); setView('item'); };
   const reset = () => { setSigned(false); setOrderError(''); setCoupon(null); setCodeText(''); setCodeError(''); setOrder(null); setItem(null); setForm({ name: '', email: '', address: '' }); setErrors({}); setView('list'); };

@@ -77,7 +77,7 @@ export const validators = {
       points: { bsonType: 'int' },
       balance_after: { bsonType: 'int' },
       source_type: {
-        enum: ['prediction', 'payout', 'refund', 'watch_time', 'redemption', 'signup_bonus', 'merch_purchase', 'signature'],
+        enum: ['prediction', 'payout', 'refund', 'watch_time', 'redemption', 'signup_bonus', 'merch_purchase', 'signature', 'shorts_bonus', 'post_bonus', 'logo_purchase', 'party_bonus'],
       },
       timestamp: { bsonType: 'date' },
     },
@@ -144,6 +144,98 @@ export const validators = {
       duration_seconds: { bsonType: 'int', minimum: 1 },
       points: { bsonType: 'int', minimum: 1 },
       active: { bsonType: 'bool' },
+      kind: { enum: ['video', 'short'] },
+      game: { bsonType: 'string' },
+      url: { bsonType: 'string' },
+    },
+  },
+  short_views: {
+    bsonType: 'object',
+    required: ['user_id', 'short_id', 'viewed_at'],
+    properties: {
+      user_id: { bsonType: 'objectId' },
+      short_id: { bsonType: 'string' },
+      video_id: { bsonType: 'string' },
+      viewed_at: { bsonType: 'date' },
+    },
+  },
+  // One row per player per UTC day that the daily party bonus was paid; the unique index makes it once a day.
+  party_bonus_days: {
+    bsonType: 'object',
+    required: ['user_id', 'day', 'created_at'],
+    properties: { user_id: { bsonType: 'objectId' }, day: { bsonType: 'string', pattern: '^\\d{4}-\\d{2}-\\d{2}$' }, created_at: { bsonType: 'date' } },
+  },
+  // Purchased profile logos: a brand-folder mark on a backdrop colour (src/services/logos.js).
+  profile_logos: {
+    bsonType: 'object',
+    required: ['user_id', 'logo_id', 'backdrop', 'cost', 'created_at'],
+    properties: {
+      user_id: { bsonType: 'objectId' },
+      logo_id: { bsonType: 'string' },
+      backdrop: { bsonType: 'string', pattern: '^#[0-9a-f]{6}$' },
+      cost: { bsonType: 'int' },
+      created_at: { bsonType: 'date' },
+    },
+  },
+  // Fan feed: posts and comments are written by users from the `users` collection.
+  posts: {
+    bsonType: 'object',
+    required: ['user_id', 'text', 'created_at'],
+    properties: {
+      user_id: { bsonType: 'objectId' },
+      text: { bsonType: 'string', minLength: 1, maxLength: 240 },
+      created_at: { bsonType: 'date' },
+      seed_key: { bsonType: 'string' },
+    },
+  },
+  post_comments: {
+    bsonType: 'object',
+    required: ['post_id', 'user_id', 'text', 'created_at'],
+    properties: {
+      post_id: { bsonType: 'objectId' },
+      user_id: { bsonType: 'objectId' },
+      text: { bsonType: 'string', minLength: 1, maxLength: 200 },
+      created_at: { bsonType: 'date' },
+      seed_key: { bsonType: 'string' },
+    },
+  },
+  post_likes: {
+    bsonType: 'object',
+    required: ['post_id', 'user_id', 'created_at'],
+    properties: { post_id: { bsonType: 'objectId' }, user_id: { bsonType: 'objectId' }, created_at: { bsonType: 'date' } },
+  },
+  // FaZe history PDF, chunked and embedded (src/scripts/ingest-history.js). Read by the fun-fact RAG.
+  faze_history_chunks: {
+    bsonType: 'object',
+    required: ['chunk_id', 'text', 'embedding', 'embedding_model'],
+    properties: {
+      chunk_id: { bsonType: 'string' },
+      text: { bsonType: 'string' },
+      heading: { bsonType: 'string' },
+      year: { bsonType: 'int' },
+      source: { bsonType: 'string' },
+      embedding: { bsonType: 'array' },
+      embedding_model: { bsonType: 'string' },
+    },
+  },
+  fun_facts: {
+    bsonType: 'object',
+    required: ['user_id', 'fact', 'created_at'],
+    properties: {
+      user_id: { bsonType: 'objectId' },
+      fact: { bsonType: 'string' },
+      angle: { bsonType: 'string' },
+      chunk_ids: strArray,
+      created_at: { bsonType: 'date' },
+    },
+  },
+  short_likes: {
+    bsonType: 'object',
+    required: ['user_id', 'short_id', 'created_at'],
+    properties: {
+      user_id: { bsonType: 'objectId' },
+      short_id: { bsonType: 'string' },
+      created_at: { bsonType: 'date' },
     },
   },
   watch_sessions: {
@@ -189,7 +281,22 @@ const indexes = {
   ],
   watch_videos: [[{ video_id: 1 }, { unique: true }]],
   watch_sessions: [[{ user_id: 1, video_id: 1 }, {}]],
+  short_views: [
+    [{ user_id: 1, short_id: 1 }, { unique: true }], // a short counts once per user
+    [{ user_id: 1, viewed_at: -1 }, {}],
+  ],
+  short_likes: [
+    [{ user_id: 1, short_id: 1 }, { unique: true }],
+    [{ short_id: 1 }, {}],
+  ],
   twitch_watch: [[{ user_id: 1, day: 1 }, { unique: true }]],
+  faze_history_chunks: [[{ chunk_id: 1 }, { unique: true }]],
+  party_bonus_days: [[{ user_id: 1, day: 1 }, { unique: true }]],
+  profile_logos: [[{ user_id: 1, logo_id: 1, backdrop: 1 }, { unique: true }], [{ user_id: 1, created_at: -1 }, {}]],
+  posts: [[{ created_at: -1 }, {}], [{ seed_key: 1 }, { unique: true, partialFilterExpression: { seed_key: { $exists: true } } }]],
+  post_comments: [[{ post_id: 1, created_at: 1 }, {}], [{ seed_key: 1 }, { unique: true, partialFilterExpression: { seed_key: { $exists: true } } }]],
+  post_likes: [[{ post_id: 1, user_id: 1 }, { unique: true }], [{ user_id: 1 }, {}]],
+  fun_facts: [[{ user_id: 1, created_at: -1 }, {}]],
 };
 
 // Collections this API owns, whose live validator must follow the code (e.g. when a new ledger source type is added).

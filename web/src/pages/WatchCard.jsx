@@ -72,7 +72,7 @@ export function WatchCard() {
         <EmptyState title="Sign in to earn" body="Watch time only counts for signed-in accounts." />
       ) : (
         <>
-          <div className="aspect-video overflow-hidden rounded-md bg-black"><div ref={host} className="h-full w-full" /></div>
+          <div className="aspect-video overflow-hidden rounded-md bg-black sm:max-w-[71.43%]"><div ref={host} className="h-full w-full" /></div>
           {error && <p role="alert" className="mt-2 text-sm text-danger">{error}</p>}
         </>
       )}

@@ -51,7 +51,7 @@ export default function Member() {
 
       <div className="grid gap-8 md:grid-cols-2 md:gap-10">
         <section aria-labelledby="who-h" className="frame grid place-items-center gap-4 p-8 text-center">
-          <Avatar name={p.name} size={140} color={p.profile_color ?? undefined} />
+          <Avatar name={p.name} size={140} color={p.profile_color ?? undefined} logo={p.profile_logo} />
           <div className="min-w-0">
             <h2 id="who-h" className="break-words text-xl">{p.name}</h2>
             <p className="text-body-sm text-muted">{p.faze_points.toLocaleString()} points</p>

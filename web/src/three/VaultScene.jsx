@@ -61,11 +61,11 @@ function Core() {
     uAccent: { value: new THREE.Color(ACCENT) }, uNoise: { value: noise },
   }), [noise, animate]);
 
-  // Wide heroes: a large mark right of centre, so the headline stays clear. Narrow ones (phones, portrait tablets): a small mark
+  // Wide heroes: a large mark right of centre (it sat at 0.2 of the width, then moved 16.5% left and 5% back right), so the headline stays clear. Narrow ones (phones, portrait tablets): a small mark
   // in the empty top-right corner, because a bright white shape behind the headline would make it unreadable.
   const wide = viewport.aspect > 1.8;
   const size = wide ? Math.min(2.7, viewport.height * 0.58, (viewport.width * 0.4) / LOGO_ASPECT) : (viewport.width * 0.34) / LOGO_ASPECT;
-  const homeX = wide ? viewport.width * 0.2 : viewport.width * 0.45 - (size * LOGO_ASPECT) / 2;
+  const homeX = wide ? viewport.width * 0.085 : viewport.width * 0.45 - (size * LOGO_ASPECT) / 2;
   const homeY = wide ? 0 : viewport.height * 0.5 - size * 0.5 - viewport.height * 0.09;
 
   useFrame((state, dt) => {
@@ -129,7 +129,7 @@ function Embers({ count }) {
 // Shown when WebGL is unavailable: the same traced mark as flat SVG over the brand slash.
 const Poster = () => (
   <div aria-hidden="true" className="relative h-full w-full bg-bg" style={{ background: 'linear-gradient(115deg, var(--color-bg) 55%, var(--color-accent) 55%, var(--color-accent) 64%, var(--color-bg) 64%)' }}>
-    <svg viewBox={LOGO_SVG_VIEWBOX} className="absolute right-[12%] top-1/2 h-[46%] -translate-y-1/2" fill="#f5f5f5">
+    <svg viewBox={LOGO_SVG_VIEWBOX} className="absolute right-[23.5%] top-1/2 h-[46%] -translate-y-1/2" fill="#f5f5f5">
       <polygon points={LOGO_SVG_POINTS} />
     </svg>
   </div>

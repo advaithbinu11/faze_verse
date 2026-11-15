@@ -6,7 +6,8 @@ import { col } from '../db.js';
 import { HttpError } from '../errors.js';
 import { requireAuth } from '../middleware/auth.js';
 import { addPartyChannelMember, closePartyChannel, createPartyChannel, removePartyChannelMember } from '../services/discord.js';
-import { canPlay } from '../services/userModel.js';
+import { GAME_CATALOG, canonicalGame } from '../services/games.js';
+import { awardPartyBonus } from '../services/partyBonus.js';
 
 const router = Router();
 router.use(requireAuth);
@@ -29,10 +30,11 @@ const regionOf = (user, region) => region ?? user.regions?.[0] ?? 'GLOBAL';
 
 // Other players who share a game in your library AND at least one region or followed team with you.
 // With no regions/teams set it falls back to shared games only.
+// Every game you own, and every catalogue game, is listed even with 0 matching players. Anyone can join or start a
+// party for any game, owned or not; games you own (`owned`) are sorted first, then by matching players.
 router.get('/clusters', async (req, res) => {
   const me = req.user;
   const myGames = (await col('user_games').find({ user_id: me._id }).project({ game_name: 1 }).toArray()).map((g) => g.game_name);
-  if (!myGames.length) return res.json([]);
   const myRegions = me.regions ?? [];
   const myTeams = me.faze_teams_followed ?? [];
 
@@ -56,16 +58,29 @@ router.get('/clusters', async (req, res) => {
     ])
     .toArray();
 
-  const open = (await col('parties').find({ game_playing: { $in: clusters.map((c) => c._id) }, people_count: { $lt: config.partyMaxSize } }).toArray()).map(shape);
+  // Games with no matching players yet: the ones you own, then the rest of the catalogue.
+  const listed = new Set(clusters.map((c) => canonicalGame(c._id) ?? c._id));
+  const extra = [];
+  for (const name of [...myGames, ...GAME_CATALOG.map(([n]) => n)]) {
+    const key = canonicalGame(name) ?? name;
+    if (listed.has(key)) continue;
+    listed.add(key);
+    extra.push({ _id: name, players: 0, shared_regions: [], shared_teams: [] });
+  }
+  clusters.push(...extra);
+  const owned = new Set(myGames);
+
+  const open = (await col('parties').find({ game_playing: { $in: clusters.map((c) => c._id) }, people_count: { $lt: config.partyMaxSize }, people: { $ne: me._id } }).toArray()).map(shape);
   res.json(
     clusters.map((c) => ({
       game_id: c._id,
       game_name: c._id,
       players: c.players,
+      owned: owned.has(c._id),
       shared_regions: unique(c.shared_regions),
       shared_teams: unique(c.shared_teams),
       open_parties: open.filter((p) => p.game_id === c._id).map(({ party_id, game_id, region, num_people }) => ({ party_id, game_id, region, num_people })),
-    })),
+    })).sort((a, b) => Number(b.owned) - Number(a.owned) || b.players - a.players),
   );
 });
 
@@ -75,6 +90,9 @@ router.get('/', async (req, res) => {
     .find({ people_count: { $lt: config.partyMaxSize }, ...(q.game_id && { game_playing: q.game_id }), ...(q.region && { region: q.region }) })
     .limit(50)
     .toArray();
+  // Parties for games you own come first, then the fullest.
+  const mine = new Set((await col('user_games').find({ user_id: req.user._id }).project({ game_name: 1 }).toArray()).map((g) => g.game_name));
+  parties.sort((a, b) => Number(mine.has(b.game_playing)) - Number(mine.has(a.game_playing)) || b.people_count - a.people_count);
   res.json(await withMembers(parties));
 });
 
@@ -85,7 +103,6 @@ const createSchema = z.object({
 });
 
 async function createParty(user, { game_id, region, discord_channel_link }) {
-  if (!(await canPlay(user._id, game_id))) throw new HttpError(403, 'You must own this game on Steam');
   const doc = {
     _id: randomUUID(),
     game_playing: game_id,
@@ -113,13 +130,13 @@ const grantChannelAccess = (party, user) =>
   party.discord_channel_link && user.discord_id ? addPartyChannelMember(party._id, user.discord_id) : null;
 
 router.post('/', async (req, res) => {
-  res.status(201).json(await createParty(req.user, createSchema.parse(req.body)));
+  const party = await createParty(req.user, createSchema.parse(req.body));
+  res.status(201).json({ ...party, bonus: await awardPartyBonus(req.user) });
 });
 
 // Joins the best open party for your game/region, or starts a new one.
 router.post('/match', async (req, res) => {
   const body = createSchema.parse(req.body);
-  if (!(await canPlay(req.user._id, body.game_id))) throw new HttpError(403, 'You must own this game on Steam');
   const region = regionOf(req.user, body.region);
 
   const joined = await col('parties').findOneAndUpdate(
@@ -129,13 +146,12 @@ router.post('/match', async (req, res) => {
   );
   if (joined) await grantChannelAccess(joined, req.user);
   const party = joined ?? (await col('parties').findOne({ _id: (await createParty(req.user, { ...body, region })).party_id }));
-  res.json((await withMembers([party]))[0]);
+  res.json({ ...(await withMembers([party]))[0], bonus: await awardPartyBonus(req.user) });
 });
 
 router.post('/:partyId/join', async (req, res) => {
   const party = await col('parties').findOne({ _id: req.params.partyId });
   if (!party) throw new HttpError(404, 'Party not found');
-  if (!(await canPlay(req.user._id, party.game_playing))) throw new HttpError(403, 'You must own this game on Steam');
 
   // Capacity and membership are checked in the same atomic update.
   const updated = await col('parties').findOneAndUpdate(
@@ -145,7 +161,7 @@ router.post('/:partyId/join', async (req, res) => {
   );
   if (!updated) throw new HttpError(409, 'Party is full or you already joined');
   await grantChannelAccess(updated, req.user);
-  res.json((await withMembers([updated]))[0]);
+  res.json({ ...(await withMembers([updated]))[0], bonus: await awardPartyBonus(req.user) });
 });
 
 router.post('/:partyId/leave', async (req, res) => {

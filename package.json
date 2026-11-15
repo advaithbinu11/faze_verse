@@ -8,7 +8,10 @@
     "dev": "node --watch src/server.js",
     "twitch": "node --watch src/twitch-server.js",
     "db:setup": "node src/scripts/setup-db.js",
-    "db:seed-credentials": "node src/scripts/seed-credentials.js"
+    "db:seed-credentials": "node src/scripts/seed-credentials.js",
+    "db:seed-shorts": "node src/scripts/seed-shorts.js",
+    "db:ingest-history": "node src/scripts/ingest-history.js",
+    "db:seed-feed": "node src/scripts/seed-feed.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +26,7 @@
     "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^7.9.0",
+    "pdf-parse": "1.1.1",
     "zod": "^3.25.76"
   }
 }

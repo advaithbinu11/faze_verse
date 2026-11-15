@@ -7,7 +7,11 @@ import { applyPoints } from './ledger.js';
 // Time is measured by the SERVER between heartbeats; the client only says whether the player is playing.
 const BEAT_MIN_MS = 10_000; // faster beats are ignored, so spamming the endpoint earns nothing
 const MAX_CREDIT_MS = 45_000; // longest gap credited as continuous playback (the client beats every ~15s)
-const MS_PER_POINT = 30_000;
+export const MS_PER_INTERVAL = 30_000;
+export const POINTS_PER_INTERVAL = 10; // 10 points for every full 30 seconds of verified playback
+
+// Points owed so far today: whole intervals of credited playback, capped for the day, minus what was already paid.
+export const pointsDue = (creditedMs, awarded, cap) => Math.max(0, Math.min(Math.floor(creditedMs / MS_PER_INTERVAL) * POINTS_PER_INTERVAL, cap) - awarded);
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -34,7 +38,7 @@ export async function recordBeat(userId, { playing }) {
   );
   if (!modifiedCount) return { awarded: 0, today: doc.awarded, cap };
 
-  const due = Math.min(Math.floor(credited / MS_PER_POINT), cap) - doc.awarded;
+  const due = pointsDue(credited, doc.awarded, cap);
   if (due <= 0) return { awarded: 0, today: doc.awarded, cap };
 
   const awarded = await withTxn(async (session) => {
