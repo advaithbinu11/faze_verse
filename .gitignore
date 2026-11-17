@@ -10,3 +10,5 @@ dist/
 # Third-party brand kit and reference documents (not part of the app)
 drive-download-*/
 Fazeclanhistory.pdf
+.vercel
+.env*

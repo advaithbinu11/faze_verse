@@ -3,7 +3,7 @@ import { col, withTxn } from '../db.js';
 import { applyPoints } from './ledger.js';
 
 // ---------- watch points for live streams ----------
-// A stream has no end, so points accrue instead: 1 point per 30s of playback, up to a daily cap.
+// A stream has no end, so points accrue instead: 10 points per 30s of playback, up to a daily cap.
 // Time is measured by the SERVER between heartbeats; the client only says whether the player is playing.
 const BEAT_MIN_MS = 10_000; // faster beats are ignored, so spamming the endpoint earns nothing
 const MAX_CREDIT_MS = 45_000; // longest gap credited as continuous playback (the client beats every ~15s)

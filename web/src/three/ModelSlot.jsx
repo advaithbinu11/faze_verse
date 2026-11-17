@@ -8,9 +8,10 @@ function GLBModel({ url }) {
 
 // Drop an optimised glTF at public/models/vault.glb and it replaces the procedural core.
 // A HEAD request decides, so a missing file never triggers a failed Suspense load.
-export function ModelSlot({ url = '/models/vault.glb', children }) {
+export function ModelSlot({ url, children }) {
   const [present, setPresent] = useState(false);
   useEffect(() => {
+    if (!url) return undefined;
     let live = true;
     fetch(url, { method: 'HEAD' })
       .then((r) => live && setPresent(r.ok && !/html/.test(r.headers.get('content-type') ?? '')))

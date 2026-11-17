@@ -11,9 +11,9 @@ const coinsFor = (n) => Math.min(COINS.length, 3 + Math.floor(Math.log10(Math.ma
 
 // Counts up from 0 to the target. Reduced motion shows the final number straight away.
 function useCountUp(target, ms = 700) {
-  const [value, setValue] = useState(calm() ? target : 0);
+  const [value, setValue] = useState(calm() || target <= 10 ? target : 0);
   useEffect(() => {
-    if (calm()) { setValue(target); return undefined; }
+    if (calm() || target <= 10) { setValue(target); return undefined; }
     let raf; const t0 = performance.now();
     const tick = (now) => {
       const p = Math.min(1, (now - t0) / ms);

@@ -54,6 +54,17 @@ function Player({ channel, video, onStatus, onPlaying }) {
       player.addEventListener(E.PLAYING, () => { if (!video) onStatus('live'); onPlaying(true); });
       player.addEventListener(E.PAUSE, () => onPlaying(false));
       player.addEventListener(E.ENDED, () => onPlaying(false));
+      // Twitch's embed uses Amazon IVS internally. An unavailable channel/VOD
+      // can surface as a master-playlist 404, so turn it into a recoverable UI
+      // state instead of leaving the player retrying a dead playlist.
+      if (E.ERROR) {
+        player.addEventListener(E.ERROR, () => {
+          if (dead) return;
+          onPlaying(false);
+          onStatus('offline');
+          setError(video ? 'This replay is no longer available.' : 'This channel is offline or unavailable.');
+        });
+      }
       if (!video) {
         player.addEventListener(E.ONLINE, () => onStatus('live'));
         player.addEventListener(E.OFFLINE, () => { onStatus('offline'); onPlaying(false); });
@@ -178,7 +189,7 @@ export function TwitchWatch() {
   const share = async () => {
     const url = `${location.origin}${location.pathname}#watch=${ch.c}`;
     try {
-      if (navigator.share) await navigator.share({ title: 'Watch on FaZe Vault', url });
+      if (navigator.share) await navigator.share({ title: 'Watch on FaZe Verse', url });
       else { await navigator.clipboard.writeText(url); toast('Link copied'); }
     } catch { /* share sheet dismissed */ }
   };

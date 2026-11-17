@@ -39,7 +39,7 @@ export default function Shell() {
     <div className="pb-12">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-bg focus:p-2">Skip to content</a>
       <header className="gutter flex flex-wrap items-center justify-between gap-x-5 gap-y-2.5 border-b-4 border-text py-4">
-        <Link to="/" className="font-display text-[26px] uppercase leading-none">Faze <span className="text-accent-text">Vault</span></Link>
+        <Link to="/" className="font-display text-[26px] uppercase leading-none">Faze <span className="text-accent-text">Verse</span></Link>
         <div className="flex flex-wrap items-center gap-1.5">
           {demo && <Chip on={false}>Demo data</Chip>}
           {user && <Chip accent><span aria-live="off">{user.faze_points.toLocaleString()}</span> Points</Chip>}

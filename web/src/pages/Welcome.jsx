@@ -29,7 +29,7 @@ function FunFact() {
       ) : (
         <p className="m-0 max-w-[68ch] text-body" aria-live="polite">{current.fact}</p>
       )}
-      {!fact.loading && <div><Button type="button" onClick={another} loading={busy}>Another one</Button></div>}
+      {!fact.loading && <div><Button type="button" onClick={another} loading={busy}>Give another Faze Fun Fact!</Button></div>}
     </section>
   );
 }

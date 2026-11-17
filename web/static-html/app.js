@@ -1,4 +1,4 @@
-/* FaZe Vault: demo-mode interactivity for the static pages.
+/* FaZe Verse: demo-mode interactivity for the static pages.
    Ports the React app's fake data layer (src/data/fake.js + seed.js) to vanilla JS.
    State lives in localStorage so it carries across pages; pages still render their static markup without JS. */
 (() => {

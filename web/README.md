@@ -1,4 +1,4 @@
-# FaZe Vault web
+# FaZe Verse web
 
 React 19 + Vite + Tailwind 3, with React Three Fiber scenes and custom GLSL (`src/three/shaders.js`).
 

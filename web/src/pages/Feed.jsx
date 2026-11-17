@@ -104,7 +104,7 @@ export default function Feed() {
 
   if (status === 'loading') return <Skeleton className="h-64" />;
   if (!user) {
-    return <div className="max-w-feed"><h1 className="text-xl">Fan feed</h1><EmptyState title="Sign in to join the feed" body="Posts and comments come from FaZe Vault players, so you need an account to read and write them." action={<Button variant="primary" onClick={login}>Sign in with Steam</Button>} /></div>;
+    return <div className="max-w-feed"><h1 className="text-xl">Fan feed</h1><EmptyState title="Sign in to join the feed" body="Posts and comments come from FaZe Verse players, so you need an account to read and write them." action={<Button variant="primary" onClick={login}>Sign in with Steam</Button>} /></div>;
   }
 
   return (
