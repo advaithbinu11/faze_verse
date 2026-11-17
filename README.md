@@ -4,7 +4,7 @@ FaZe Verse is an unofficial FaZe Clan fan platform for watching, earning, connec
 
 The project combines a React web experience with an Express API backed by MongoDB Atlas. Members can sign in, follow players and teams, earn FaZe Points, watch Twitch and YouTube content, discover similar players, make friends, join parties, browse merch, and personalize their profile.
 
-> This is a community-built fan project and is not affiliated with or endorsed by FaZe Clan.
+> This is a project built during the HackUTA hackathon in 2026 and is not affiliated with or endorsed by FaZe Clan.
 
 ## Highlights
 
