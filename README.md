@@ -25,7 +25,7 @@ The project combines a React web experience with an Express API backed by MongoD
 | Frontend | React 19, Vite, React Router, Tailwind CSS |
 | 3D UI | Three.js, React Three Fiber, drei, custom GLSL shaders |
 | API | Node.js, Express 5, Zod |
-| Database | MongoDB Atlas and the MongoDB Node driver |
+| Database/RAG | MongoDB Atlas and the MongoDB Node driver |
 | Auth | JWT bearer tokens, Steam OpenID |
 | Deployment | Vercel frontend and Vercel Node function API |
 
